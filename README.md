@@ -26,7 +26,7 @@
 
 ## Stack
 
-HTML, CSS y JavaScript sin build ni dependencias — se despliega tal cual como sitio estático.
+HTML, CSS y JavaScript sin build ni dependencias, se despliega tal cual como sitio estático.
 
 ## Desarrollo local
 
