@@ -5,10 +5,6 @@
   const search = document.getElementById("carta-search");
   if (!list) return;
 
-  function euro(n) {
-    return n.toFixed(2).replace(".", ",") + "€";
-  }
-
   function render(activeCat, query) {
     list.innerHTML = "";
     const q = (query || "").trim().toLowerCase();
@@ -18,9 +14,12 @@
 
       const items = cat.items.filter((it) => {
         if (!q) return true;
+        const name = I18N.getItemName(cat, it);
+        const desc = I18N.getItemDesc(cat, it);
         return (
+          name.toLowerCase().includes(q) ||
           it.name.toLowerCase().includes(q) ||
-          (it.desc && it.desc.toLowerCase().includes(q)) ||
+          (desc && desc.toLowerCase().includes(q)) ||
           (it.num && it.num.toLowerCase().includes(q))
         );
       });
@@ -30,28 +29,31 @@
       catEl.className = "menu-category";
 
       const h3 = document.createElement("h3");
-      h3.textContent = `${cat.icon || ""} ${cat.name}`;
+      h3.textContent = I18N.getCategoryName(cat);
       catEl.appendChild(h3);
 
-      if (cat.note) {
-        const note = document.createElement("p");
-        note.className = "category-note";
-        note.textContent = cat.note;
-        catEl.appendChild(note);
+      const note = I18N.getCategoryNote(cat);
+      if (note) {
+        const noteEl = document.createElement("p");
+        noteEl.className = "category-note";
+        noteEl.textContent = note;
+        catEl.appendChild(noteEl);
       }
 
       const grid = document.createElement("div");
       grid.className = "menu-items";
 
       items.forEach((it) => {
+        const name = I18N.getItemName(cat, it);
+        const desc = I18N.getItemDesc(cat, it);
         const row = document.createElement("div");
         row.className = "menu-item";
         row.innerHTML = `
           <div class="item-info">
-            <span class="item-name">${it.num ? `<span class="item-num">${it.num}.</span>` : ""}${it.name}</span>
-            ${it.desc ? `<div class="item-desc">${it.desc}</div>` : ""}
+            <span class="item-name">${it.num ? `<span class="item-num">${it.num}.</span>` : ""}${name}</span>
+            ${desc ? `<div class="item-desc">${desc}</div>` : ""}
           </div>
-          <div class="item-price">${euro(it.price)}</div>
+          <div class="item-price">${I18N.formatPrice(it.price)}</div>
         `;
         grid.appendChild(row);
       });
@@ -61,18 +63,25 @@
     });
 
     if (!list.children.length) {
-      list.innerHTML = `<p style="text-align:center;color:var(--ink-soft)">No se han encontrado platos que coincidan con la búsqueda.</p>`;
+      list.innerHTML = `<p class="empty-note">${I18N.t("carta.noResults")}</p>`;
     }
   }
 
   let currentCat = "all";
   let currentQuery = "";
 
-  if (filters) {
+  function renderFilters() {
     filters.innerHTML =
-      `<button class="chip active" data-cat="all">Todo</button>` +
-      MENU.map((cat) => `<button class="chip" data-cat="${cat.id}">${cat.icon || ""} ${cat.name}</button>`).join("");
+      `<button class="chip active" data-cat="all">${I18N.t("chips.todo")}</button>` +
+      MENU.map((cat) => `<button class="chip" data-cat="${cat.id}">${I18N.getCategoryName(cat)}</button>`).join("");
+    filters.querySelectorAll(".chip").forEach((c) => {
+      if (c.dataset.cat === currentCat) c.classList.add("active");
+      else c.classList.remove("active");
+    });
+  }
 
+  if (filters) {
+    renderFilters();
     filters.addEventListener("click", (e) => {
       const btn = e.target.closest(".chip");
       if (!btn) return;
@@ -89,6 +98,11 @@
       render(currentCat, currentQuery);
     });
   }
+
+  document.addEventListener("langchange", () => {
+    renderFilters();
+    render(currentCat, currentQuery);
+  });
 
   render(currentCat, currentQuery);
 })();

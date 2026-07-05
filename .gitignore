@@ -2,3 +2,6 @@ carta DAI.pdf
 .vercel
 node_modules
 .DS_Store
+
+.vercel
+.env*

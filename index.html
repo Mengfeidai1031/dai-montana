@@ -10,6 +10,22 @@
 </head>
 <body>
 
+<!-- Iconos SVG reutilizados (línea fina, currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 6a2 2 0 0 1 1-2z"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 3.5"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><line x1="12" y1="13" x2="12" y2="21"/></symbol>
+    <symbol id="icon-receipt" viewBox="0 0 24 24"><path d="M6 2h12v19l-2.5-1.4L13 21l-1.5-1.4L10 21l-1.5-1.4L6 21V2z"/><line x1="8.5" y1="7" x2="15.5" y2="7"/><line x1="8.5" y1="11" x2="15.5" y2="11"/><line x1="8.5" y1="15" x2="13" y2="15"/></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2l-2 5.6-5.6 2 2-5.6z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="M8 10l4 4 4-4"/><path d="M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5"/></symbol>
+  </defs>
+</svg>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="#inicio">
@@ -17,11 +33,25 @@
       Dai Montaña
     </a>
     <nav class="main-nav">
-      <a href="#carta">Carta</a>
-      <a href="#pedido">Hacer pedido</a>
-      <a href="#ubicacion">Cómo llegar</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#carta" data-i18n="nav.carta">Carta</a>
+      <a href="#pedido" data-i18n="nav.pedido">Hacer pedido</a>
+      <a href="#ubicacion" data-i18n="nav.ubicacion">Cómo llegar</a>
+      <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
     </nav>
+    <div class="lang-switcher" role="group" aria-label="Idioma / Language / 语言">
+      <button class="lang-btn" data-lang="es" aria-label="Español">
+        <svg class="flag-icon" viewBox="0 0 24 16"><defs><clipPath id="flag-es-clip"><rect width="24" height="16" rx="3"/></clipPath></defs><g clip-path="url(#flag-es-clip)"><rect width="24" height="16" fill="#AA151B"/><rect y="4" width="24" height="8" fill="#F1BF00"/></g></svg>
+        <span>ES</span>
+      </button>
+      <button class="lang-btn" data-lang="en" aria-label="English">
+        <svg class="flag-icon" viewBox="0 0 24 16"><defs><clipPath id="flag-en-clip"><rect width="24" height="16" rx="3"/></clipPath></defs><g clip-path="url(#flag-en-clip)"><rect width="24" height="16" fill="#012169"/><path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="3"/><path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.4"/><path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="5"/><path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="2.2"/></g></svg>
+        <span>EN</span>
+      </button>
+      <button class="lang-btn" data-lang="zh" aria-label="中文">
+        <svg class="flag-icon" viewBox="0 0 24 16"><defs><clipPath id="flag-zh-clip"><rect width="24" height="16" rx="3"/></clipPath></defs><g clip-path="url(#flag-zh-clip)"><rect width="24" height="16" fill="#DE2910"/><polygon points="5,3.2 5.7,5.1 7.7,5.1 6.1,6.3 6.7,8.2 5,7 3.3,8.2 3.9,6.3 2.3,5.1 4.3,5.1" fill="#FFDE00"/></g></svg>
+        <span>中</span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -30,11 +60,11 @@
     <img class="hero-logo" src="assets/logo.png" alt="Restaurante Dai Montaña" />
     <div class="hero-text">
       <h1>Restaurante Dai Montaña</h1>
-      <p class="tagline">Cocina canaria, pizzas de masa casera y comida china, en Montaña los Vélez, Las Palmas.</p>
+      <p class="tagline" data-i18n="hero.tagline">Cocina canaria, pizzas de masa casera y comida china, en Montaña los Vélez, Las Palmas.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#carta">Ver la carta</a>
-        <a class="btn btn-orange" href="#pedido">Hacer mi pedido</a>
-        <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download>⬇ Descargar carta en PDF</a>
+        <a class="btn btn-primary" href="#carta"><span data-i18n="hero.verCarta">Ver la carta</span></a>
+        <a class="btn btn-orange" href="#pedido"><span data-i18n="hero.hacerPedido">Hacer mi pedido</span></a>
+        <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download><svg class="icon"><use href="#icon-download"/></svg><span data-i18n="hero.descargarPdf">Descargar carta en PDF</span></a>
       </div>
     </div>
   </div>
@@ -43,18 +73,18 @@
 <section class="info-strip">
   <div class="container info-cards">
     <div class="info-card">
-      <h3>📍 Dirección</h3>
+      <h3><svg class="icon"><use href="#icon-map-pin"/></svg><span data-i18n="info.direccion">Dirección</span></h3>
       <p>C. Amapola, 85<br>35269 Montaña los Vélez<br>Las Palmas</p>
     </div>
     <div class="info-card">
-      <h3>📞 Teléfonos</h3>
+      <h3><svg class="icon"><use href="#icon-phone"/></svg><span data-i18n="info.telefonos">Teléfonos</span></h3>
       <a class="tel" href="tel:928268701">928 268 701</a>
       <a class="tel" href="tel:928126477">928 126 477</a>
     </div>
     <div class="info-card">
-      <h3>🕒 Horario</h3>
-      <p>Lunes a domingo<br>12:00–16:00 y 20:00–00:00</p>
-      <span class="badge-closed">Martes cerrado</span>
+      <h3><svg class="icon"><use href="#icon-clock"/></svg><span data-i18n="info.horario">Horario</span></h3>
+      <p data-i18n="info.horarioText">Lunes a domingo<br>12:00–16:00 y 20:00–00:00</p>
+      <span class="badge-closed" data-i18n="info.cerrado">Martes cerrado</span>
     </div>
   </div>
 </section>
@@ -62,15 +92,18 @@
 <section class="section" id="carta">
   <div class="container">
     <div class="section-head">
-      <h2>Nuestra carta</h2>
-      <p>Todos los precios en euros, IVA incluido. Consulta o descarga el PDF original del establecimiento.</p>
+      <h2 data-i18n="carta.heading">Nuestra carta</h2>
+      <p data-i18n="carta.subtext">Todos los precios en euros, IGIC incluido. Consulta o descarga el PDF original del establecimiento.</p>
     </div>
 
     <div style="text-align:center;margin-bottom:24px;">
-      <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download>⬇ Descargar carta en PDF</a>
+      <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download><svg class="icon"><use href="#icon-download"/></svg><span data-i18n="hero.descargarPdf">Descargar carta en PDF</span></a>
     </div>
 
-    <input class="menu-search" id="carta-search" type="search" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+    <div class="search-wrap">
+      <svg class="icon search-icon"><use href="#icon-search"/></svg>
+      <input class="menu-search" id="carta-search" type="search" data-i18n-placeholder="carta.searchPlaceholder" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+    </div>
     <div class="category-filters" id="carta-filters"></div>
     <div id="carta-list"></div>
   </div>
@@ -79,25 +112,25 @@
 <section class="section" id="pedido">
   <div class="container">
     <div class="section-head">
-      <h2>Haz tu pedido</h2>
-      <p>Selecciona los platos que quieres y mira el total al instante. Esta herramienta es solo para preparar tu pedido: para confirmarlo, llama al restaurante.</p>
+      <h2 data-i18n="pedido.heading">Haz tu pedido</h2>
+      <p data-i18n="pedido.subtext">Selecciona los platos que quieres y mira el total al instante. Esta herramienta es solo para preparar tu pedido: para confirmarlo, llama al restaurante.</p>
     </div>
 
     <div class="notice-grid">
       <div class="notice-card info">
-        <span class="notice-icon">ℹ️</span>
-        <h4>Precios informativos</h4>
-        <p>Los precios de esta web son orientativos y de referencia. Si se realizan modificaciones o se añaden ingredientes extra a un plato, el precio final puede variar al alza.</p>
+        <span class="notice-icon"><svg class="icon"><use href="#icon-info"/></svg></span>
+        <h4 data-i18n="notice.info.title">Precios informativos</h4>
+        <p data-i18n="notice.info.text">Los precios de esta web son orientativos y de referencia. Si se realizan modificaciones o se añaden ingredientes extra a un plato, el precio final puede variar al alza.</p>
       </div>
       <div class="notice-card delivery">
-        <span class="notice-icon">🛵</span>
-        <h4>Pedidos a domicilio</h4>
-        <p>El servicio a domicilio tiene un coste adicional de entre <strong>2,50€ y 3,50€</strong>, según la distancia hasta tu dirección.</p>
+        <span class="notice-icon"><svg class="icon"><use href="#icon-box"/></svg></span>
+        <h4 data-i18n="notice.delivery.title">Pedidos a domicilio</h4>
+        <p data-i18n="notice.delivery.text">El servicio a domicilio tiene un coste adicional de entre <strong>2,50€ y 3,50€</strong>, según la distancia hasta tu dirección.</p>
       </div>
       <div class="notice-card call">
-        <span class="notice-icon">☎️</span>
-        <h4>Confirma tu precio</h4>
-        <p>Para asegurar el precio final de tu pedido, llama al restaurante antes de confirmarlo:</p>
+        <span class="notice-icon"><svg class="icon"><use href="#icon-phone"/></svg></span>
+        <h4 data-i18n="notice.call.title">Confirma tu precio</h4>
+        <p data-i18n="notice.call.text">Para asegurar el precio final de tu pedido, llama al restaurante antes de confirmarlo:</p>
         <a href="tel:928268701">928 268 701</a>
         <a href="tel:928126477">928 126 477</a>
       </div>
@@ -105,22 +138,25 @@
 
     <div class="order-layout">
       <div>
-        <input class="menu-search" id="pedido-search" type="search" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+        <div class="search-wrap">
+          <svg class="icon search-icon"><use href="#icon-search"/></svg>
+          <input class="menu-search" id="pedido-search" type="search" data-i18n-placeholder="carta.searchPlaceholder" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+        </div>
         <div class="category-filters" id="pedido-filters"></div>
         <div id="pedido-list"></div>
       </div>
 
       <aside class="cart-panel">
-        <h3>🧾 Tu pedido (<span id="cart-count">0</span>)</h3>
+        <h3><svg class="icon"><use href="#icon-receipt"/></svg><span data-i18n="cart.title">Tu pedido</span> (<span id="cart-count">0</span>)</h3>
         <div class="cart-list" id="cart-list"></div>
         <div class="cart-total-row">
-          <span>Total</span>
+          <span data-i18n="cart.total">Total</span>
           <span id="cart-total">0,00€</span>
         </div>
         <div class="cart-actions">
-          <a class="btn btn-primary" href="tel:928268701">☎ Llamar al 928 268 701</a>
-          <a class="btn btn-outline" href="tel:928126477">☎ Llamar al 928 126 477</a>
-          <button class="btn btn-outline" id="cart-clear" type="button">🗑 Vaciar pedido</button>
+          <a class="btn btn-primary" href="tel:928268701"><svg class="icon"><use href="#icon-phone"/></svg><span data-i18n="cart.callBtn1">Llamar al 928 268 701</span></a>
+          <a class="btn btn-outline" href="tel:928126477"><svg class="icon"><use href="#icon-phone"/></svg><span data-i18n="cart.callBtn2">Llamar al 928 126 477</span></a>
+          <button class="btn btn-outline" id="cart-clear" type="button"><svg class="icon"><use href="#icon-trash"/></svg><span data-i18n="cart.clear">Vaciar pedido</span></button>
         </div>
       </aside>
     </div>
@@ -130,8 +166,8 @@
 <section class="section" id="ubicacion">
   <div class="container">
     <div class="section-head">
-      <h2>Cómo llegar</h2>
-      <p>C. Amapola, 85, 35269 Montaña los Vélez, Las Palmas</p>
+      <h2 data-i18n="map.heading">Cómo llegar</h2>
+      <p data-i18n="map.subtext">C. Amapola, 85, 35269 Montaña los Vélez, Las Palmas</p>
     </div>
     <div class="map-wrap">
       <iframe
@@ -144,7 +180,7 @@
     <div class="map-actions">
       <a class="btn btn-primary" target="_blank" rel="noopener"
          href="https://www.google.com/maps/dir/?api=1&destination=C.+Amapola+85+35269+Monta%C3%B1a+los+V%C3%A9lez+Las+Palmas">
-        🧭 Cómo llegar con Google Maps
+        <svg class="icon"><use href="#icon-compass"/></svg><span data-i18n="map.directionsBtn">Cómo llegar con Google Maps</span>
       </a>
     </div>
   </div>
@@ -155,34 +191,35 @@
     <div class="footer-grid">
       <div>
         <h4>Dai Montaña</h4>
-        <p>Restaurante</p>
+        <p data-i18n="footer.restaurante">Restaurante</p>
         <p>C. Amapola, 85</p>
         <p>35269 Montaña los Vélez, Las Palmas</p>
       </div>
       <div>
-        <h4>Teléfonos</h4>
+        <h4 data-i18n="footer.telefonosLabel">Teléfonos</h4>
         <p><a href="tel:928268701">928 268 701</a></p>
         <p><a href="tel:928126477">928 126 477</a></p>
       </div>
       <div>
-        <h4>Horario</h4>
-        <p>Lunes a domingo</p>
-        <p>12:00–16:00 y 20:00–00:00</p>
-        <p>Martes: cerrado</p>
+        <h4 data-i18n="footer.horarioLabel">Horario</h4>
+        <p data-i18n="info.horarioText">Lunes a domingo<br>12:00–16:00 y 20:00–00:00</p>
+        <p data-i18n="footer.horarioCerrado">Martes: cerrado</p>
       </div>
       <div>
-        <h4>Carta</h4>
-        <p><a href="assets/carta-dai-montana.pdf" download>Descargar PDF</a></p>
-        <p><a href="#pedido">Hacer pedido</a></p>
+        <h4 data-i18n="footer.cartaLabel">Carta</h4>
+        <p><a href="assets/carta-dai-montana.pdf" download data-i18n="footer.descargarPdf">Descargar PDF</a></p>
+        <p><a href="#pedido" data-i18n="footer.hacerPedido">Hacer pedido</a></p>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom" data-i18n="footer.disclaimer">
       Página informativa no oficial creada a partir de la carta pública del establecimiento. Precios sujetos a cambios — confirma siempre por teléfono.
     </div>
   </div>
 </footer>
 
 <script src="js/menu-data.js"></script>
+<script src="js/menu-i18n.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/app.js"></script>
 <script src="js/cart.js"></script>
 </body>

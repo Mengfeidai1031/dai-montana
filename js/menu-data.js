@@ -3,7 +3,6 @@ const MENU = [
   {
     id: "ensaladas",
     name: "Ensaladas",
-    icon: "🥗",
     items: [
       { num: "1", name: "Mixta", desc: "Escarola, tomate, pepino, atún, huevo, aceitunas y espárragos", price: 7.80 },
       { num: "2", name: "Montaña", desc: "Escarola, piña, melocotón, gambas y queso", price: 8.50 },
@@ -17,7 +16,6 @@ const MENU = [
   {
     id: "entrantes",
     name: "Entrantes",
-    icon: "🍞",
     items: [
       { num: "8", name: "Pan con Ajo", price: 1.80 },
       { num: "9", name: "Pan con Alioli", price: 1.80 },
@@ -33,7 +31,6 @@ const MENU = [
   {
     id: "combinados",
     name: "Platos Combinados",
-    icon: "🍽️",
     items: [
       { num: "17", name: "Tortilla española", desc: "Papas, huevo, cebolla, pimientos rojos y verdes", price: 9.50 },
       { num: "18", name: "Tortilla francesa", desc: "Huevo y perejil", price: 4.95 },
@@ -61,7 +58,6 @@ const MENU = [
   {
     id: "pizzas",
     name: "Pizzas",
-    icon: "🍕",
     note: "Masa casera y fresca. Base de todas las pizzas: salsa de tomate, queso y orégano. Extras: variados 0,80€ / carnes 1,50€ / mariscos 2,00€.",
     items: [
       { num: "38", name: "Tapa Pizza", desc: "3 ingredientes a elegir", price: 5.00 },
@@ -85,7 +81,6 @@ const MENU = [
   {
     id: "bocadillos",
     name: "Bocadillos",
-    icon: "🥖",
     note: "+Normal: escarola, tomate y alioli. +Especial: Normal + jamón, queso y huevo.",
     items: [
       { num: "54A", name: "Choco Normal", desc: "Col y alioli", price: 4.55 },
@@ -113,7 +108,6 @@ const MENU = [
   {
     id: "hamburguesas",
     name: "Hamburguesas",
-    icon: "🍔",
     items: [
       { num: "65A", name: "Normal", desc: "Carne, tomate, escarola, cebolla y salsa", price: 4.95 },
       { num: "65B", name: "Especial", desc: "Normal + jamón, queso y huevo", price: 5.80 },
@@ -122,7 +116,6 @@ const MENU = [
   {
     id: "perritos",
     name: "Perritos",
-    icon: "🌭",
     items: [
       { num: "66A", name: "Normal", desc: "Salchicha, cebolla y salsa", price: 3.80 },
       { num: "66B", name: "Especial", desc: "Normal + queso", price: 4.00 },
@@ -131,7 +124,6 @@ const MENU = [
   {
     id: "sandwich",
     name: "Sandwich",
-    icon: "🥪",
     items: [
       { num: "67A", name: "Mixto", desc: "Jamón y queso", price: 3.00 },
       { num: "68A", name: "Atún y millo", desc: "Vegetal", price: 3.50 },
@@ -147,7 +139,6 @@ const MENU = [
   {
     id: "croissant",
     name: "Croissant",
-    icon: "🥐",
     items: [
       { num: "67B", name: "Mixto", desc: "Jamón y queso", price: 4.25 },
       { num: "68B", name: "Atún y millo", desc: "Vegetal", price: 4.50 },
@@ -163,7 +154,6 @@ const MENU = [
   {
     id: "china-entrantes",
     name: "Comida China · Entrantes",
-    icon: "🥢",
     items: [
       { num: "76", name: "Rollitos de primavera / vegetal", price: 1.60 },
       { num: "77", name: "Wantun frito", price: 4.50 },
@@ -178,7 +168,6 @@ const MENU = [
   {
     id: "arroces-pasta",
     name: "Arroces y Pasta",
-    icon: "🍜",
     items: [
       { num: "84", name: "Arroz 3 delicias / con soja / al curry", price: 5.50 },
       { num: "85", name: "Arroz con pollo / ternera", price: 5.80 },
@@ -194,7 +183,6 @@ const MENU = [
   {
     id: "pollo-china",
     name: "Pollo (China)",
-    icon: "🐔",
     items: [
       { num: "93", name: "Pollo agridulce", price: 6.95 },
       { num: "94", name: "Pollo salsa de ajo", price: 6.95 },
@@ -208,7 +196,6 @@ const MENU = [
   {
     id: "gamba-china",
     name: "Gamba (China)",
-    icon: "🍤",
     items: [
       { num: "100", name: "Gambas rebosado / salsa agridulce", price: 11.90 },
       { num: "101", name: "Gambas con almendras", price: 10.95 },
@@ -219,7 +206,6 @@ const MENU = [
   {
     id: "pato",
     name: "Pato",
-    icon: "🦆",
     items: [
       { num: "104", name: "Pato frito", price: 10.80 },
       { num: "105", name: "Pato salsa de naranja", price: 11.80 },
@@ -229,7 +215,6 @@ const MENU = [
   {
     id: "especiales-china",
     name: "Platos Especiales",
-    icon: "⭐",
     items: [
       { num: "107", name: "Pollo salsa de ostras", price: 8.50 },
       { num: "108", name: "Pollo con puerros (plancha)", price: 9.50 },
@@ -242,7 +227,6 @@ const MENU = [
   {
     id: "menus",
     name: "Menús",
-    icon: "📋",
     items: [
       { num: "M1", name: "Menú 1", desc: "Pizza con 3 ingredientes a elegir · Pan con ajo o 1/2 ración de papas · Refresco de lata · Helado o café", price: 10.50 },
       { num: "M2", name: "Menú 2", desc: "2 pizzas con 3 ingredientes a elegir · 1 ración de papas · Refresco de 1,5 litro", price: 18.90 },
@@ -252,7 +236,6 @@ const MENU = [
   {
     id: "refrescos",
     name: "Refrescos",
-    icon: "🥤",
     items: [
       { name: "Coca-Cola", price: 1.60 },
       { name: "Fanta", price: 1.60 },
@@ -270,7 +253,6 @@ const MENU = [
   {
     id: "agua",
     name: "Agua",
-    icon: "💧",
     items: [
       { name: "Vaso", price: 0.40 },
       { name: "Botella pequeña (33cl)", price: 1.20 },
@@ -280,7 +262,6 @@ const MENU = [
   {
     id: "zumos",
     name: "Zumos",
-    icon: "🧃",
     items: [
       { name: "Pera Piña", price: 1.60 },
       { name: "Melocotón", price: 1.60 },
@@ -291,7 +272,6 @@ const MENU = [
   {
     id: "cervezas",
     name: "Cervezas",
-    icon: "🍺",
     items: [
       { name: "Tropical", price: 1.80 },
       { name: "Botellín", price: 1.20 },
@@ -307,7 +287,6 @@ const MENU = [
   {
     id: "vino",
     name: "Vino",
-    icon: "🍷",
     items: [
       { name: "Copa El Coto", price: 3.00 },
       { name: "El Coto (tinto, botella)", price: 11.00 },
@@ -325,7 +304,6 @@ const MENU = [
   {
     id: "whisky",
     name: "Whisky",
-    icon: "🥃",
     items: [
       { name: "Haig", price: 2.50 },
       { name: "JB", price: 2.50 },
@@ -342,7 +320,6 @@ const MENU = [
   {
     id: "vodka",
     name: "Vodka",
-    icon: "🍸",
     items: [
       { name: "Moskovskaya", price: 2.50 },
       { name: "Smirnoff", price: 2.80 },
@@ -351,7 +328,6 @@ const MENU = [
   {
     id: "licores",
     name: "Licores",
-    icon: "🍹",
     items: [
       { name: "Jägermeister", price: 4.00 },
       { name: "Ruavieja", price: 4.00 },
@@ -368,7 +344,6 @@ const MENU = [
   {
     id: "ron",
     name: "Ron",
-    icon: "🥂",
     items: [
       { name: "Telde (blanco)", price: 2.00 },
       { name: "Arehucas (oro-blanco)", price: 2.00 },
@@ -390,7 +365,6 @@ const MENU = [
   {
     id: "ginebra",
     name: "Ginebra",
-    icon: "🍋",
     items: [
       { name: "Gordons", price: 2.50 },
       { name: "Beefeater", price: 3.00 },
