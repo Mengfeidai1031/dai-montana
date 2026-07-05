@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurante Dai Montaña — Carta, precios y pedidos</title>
+<meta name="description" content="Carta completa del Restaurante Dai Montaña en Montaña los Vélez, Las Palmas. Precios, descarga en PDF, mapa y creador de pedido con total en vivo." />
+<link rel="icon" href="assets/logo.png" type="image/png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo.png" alt="Logo Restaurante Dai Montaña" />
+      Dai Montaña
+    </a>
+    <nav class="main-nav">
+      <a href="#carta">Carta</a>
+      <a href="#pedido">Hacer pedido</a>
+      <a href="#ubicacion">Cómo llegar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <img class="hero-logo" src="assets/logo.png" alt="Restaurante Dai Montaña" />
+    <div class="hero-text">
+      <h1>Restaurante Dai Montaña</h1>
+      <p class="tagline">Cocina canaria, pizzas de masa casera y comida china, en Montaña los Vélez, Las Palmas.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#carta">Ver la carta</a>
+        <a class="btn btn-orange" href="#pedido">Hacer mi pedido</a>
+        <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download>⬇ Descargar carta en PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-strip">
+  <div class="container info-cards">
+    <div class="info-card">
+      <h3>📍 Dirección</h3>
+      <p>C. Amapola, 85<br>35269 Montaña los Vélez<br>Las Palmas</p>
+    </div>
+    <div class="info-card">
+      <h3>📞 Teléfonos</h3>
+      <a class="tel" href="tel:928268701">928 268 701</a>
+      <a class="tel" href="tel:928126477">928 126 477</a>
+    </div>
+    <div class="info-card">
+      <h3>🕒 Horario</h3>
+      <p>Lunes a domingo<br>12:00–16:00 y 20:00–00:00</p>
+      <span class="badge-closed">Martes cerrado</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="carta">
+  <div class="container">
+    <div class="section-head">
+      <h2>Nuestra carta</h2>
+      <p>Todos los precios en euros, IVA incluido. Consulta o descarga el PDF original del establecimiento.</p>
+    </div>
+
+    <div style="text-align:center;margin-bottom:24px;">
+      <a class="btn btn-outline" href="assets/carta-dai-montana.pdf" download>⬇ Descargar carta en PDF</a>
+    </div>
+
+    <input class="menu-search" id="carta-search" type="search" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+    <div class="category-filters" id="carta-filters"></div>
+    <div id="carta-list"></div>
+  </div>
+</section>
+
+<section class="section" id="pedido">
+  <div class="container">
+    <div class="section-head">
+      <h2>Haz tu pedido</h2>
+      <p>Selecciona los platos que quieres y mira el total al instante. Esta herramienta es solo para preparar tu pedido: para confirmarlo, llama al restaurante.</p>
+    </div>
+
+    <div class="notice-grid">
+      <div class="notice-card info">
+        <span class="notice-icon">ℹ️</span>
+        <h4>Precios informativos</h4>
+        <p>Los precios de esta web son orientativos y de referencia. Si se realizan modificaciones o se añaden ingredientes extra a un plato, el precio final puede variar al alza.</p>
+      </div>
+      <div class="notice-card delivery">
+        <span class="notice-icon">🛵</span>
+        <h4>Pedidos a domicilio</h4>
+        <p>El servicio a domicilio tiene un coste adicional de entre <strong>2,50€ y 3,50€</strong>, según la distancia hasta tu dirección.</p>
+      </div>
+      <div class="notice-card call">
+        <span class="notice-icon">☎️</span>
+        <h4>Confirma tu precio</h4>
+        <p>Para asegurar el precio final de tu pedido, llama al restaurante antes de confirmarlo:</p>
+        <a href="tel:928268701">928 268 701</a>
+        <a href="tel:928126477">928 126 477</a>
+      </div>
+    </div>
+
+    <div class="order-layout">
+      <div>
+        <input class="menu-search" id="pedido-search" type="search" placeholder="Buscar un plato... (ej. pizza, gambas, pollo)" />
+        <div class="category-filters" id="pedido-filters"></div>
+        <div id="pedido-list"></div>
+      </div>
+
+      <aside class="cart-panel">
+        <h3>🧾 Tu pedido (<span id="cart-count">0</span>)</h3>
+        <div class="cart-list" id="cart-list"></div>
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span id="cart-total">0,00€</span>
+        </div>
+        <div class="cart-actions">
+          <a class="btn btn-primary" href="tel:928268701">☎ Llamar al 928 268 701</a>
+          <a class="btn btn-outline" href="tel:928126477">☎ Llamar al 928 126 477</a>
+          <button class="btn btn-outline" id="cart-clear" type="button">🗑 Vaciar pedido</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ubicacion">
+  <div class="container">
+    <div class="section-head">
+      <h2>Cómo llegar</h2>
+      <p>C. Amapola, 85, 35269 Montaña los Vélez, Las Palmas</p>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=C.+Amapola+85+35269+Monta%C3%B1a+los+V%C3%A9lez+Las+Palmas&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa del Restaurante Dai Montaña">
+      </iframe>
+    </div>
+    <div class="map-actions">
+      <a class="btn btn-primary" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/dir/?api=1&destination=C.+Amapola+85+35269+Monta%C3%B1a+los+V%C3%A9lez+Las+Palmas">
+        🧭 Cómo llegar con Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Dai Montaña</h4>
+        <p>Restaurante</p>
+        <p>C. Amapola, 85</p>
+        <p>35269 Montaña los Vélez, Las Palmas</p>
+      </div>
+      <div>
+        <h4>Teléfonos</h4>
+        <p><a href="tel:928268701">928 268 701</a></p>
+        <p><a href="tel:928126477">928 126 477</a></p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes a domingo</p>
+        <p>12:00–16:00 y 20:00–00:00</p>
+        <p>Martes: cerrado</p>
+      </div>
+      <div>
+        <h4>Carta</h4>
+        <p><a href="assets/carta-dai-montana.pdf" download>Descargar PDF</a></p>
+        <p><a href="#pedido">Hacer pedido</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Página informativa no oficial creada a partir de la carta pública del establecimiento. Precios sujetos a cambios — confirma siempre por teléfono.
+    </div>
+  </div>
+</footer>
+
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
