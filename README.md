@@ -2,7 +2,7 @@
   <img src="assets/logo.png" width="120" alt="Logo Dai Montaña" />
 </p>
 
-<h1 align="center">Restaurante Dai Montaña — Carta web</h1>
+<h1 align="center">Restaurante Dai Montaña - Carta web</h1>
 
 <p align="center">
   Web informativa del Restaurante Dai Montaña: carta completa con precios, descarga en PDF,
